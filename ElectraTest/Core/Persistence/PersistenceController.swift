@@ -10,9 +10,9 @@ import CoreData
 
 class PersistenceController {
     static let shared = PersistenceController()
-
+    
     let container: NSPersistentContainer
-
+    
     init() {
         container = NSPersistentContainer(name: "ProductModel") // Nombre del modelo
         container.loadPersistentStores { _, error in
@@ -21,17 +21,16 @@ class PersistenceController {
             }
         }
     }
-
+    
     var context: NSManagedObjectContext {
         container.viewContext
     }
 }
 
-
 class ProductCoreDataManager {
     static let shared = ProductCoreDataManager()
     private let context = PersistenceController.shared.context
-
+    
     // Guardar un producto
     func saveProduct(product: Product) {
         // Verificar si el producto ya está guardado
@@ -39,13 +38,13 @@ class ProductCoreDataManager {
             print("El producto ya está guardado.")
             return
         }
-
+        
         let productEntity = ProductEntity(context: context)
         productEntity.id = product.id
         productEntity.name = product.name
         productEntity.finalPrice = product.finalPrice
         productEntity.imageURL = product.images.first ?? ""
-
+        
         do {
             try context.save()
             print("Producto guardado exitosamente.")
@@ -58,7 +57,7 @@ class ProductCoreDataManager {
     func isProductAlreadySaved(productId: String) -> Bool {
         let request: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
         request.predicate = NSPredicate(format: "id == %@", productId)
-
+        
         do {
             let count = try context.count(for: request)
             return count > 0
@@ -67,11 +66,11 @@ class ProductCoreDataManager {
             return false
         }
     }
-
+    
     // Obtener todos los productos
     func fetchSavedProducts() -> [ProductEntity] {
         let request: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
-
+        
         do {
             return try context.fetch(request)
         } catch {
@@ -79,7 +78,7 @@ class ProductCoreDataManager {
             return []
         }
     }
-
+    
     // Eliminar un producto específico
     func deleteProduct(_ product: ProductEntity) {
         context.delete(product)

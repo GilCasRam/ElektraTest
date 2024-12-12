@@ -13,18 +13,15 @@ class ProductService {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-
             do {
                 let apiResponse = try JSONDecoder().decode(APIResponse.self, from: data)
                 completion(.success(apiResponse.result.products))
@@ -36,4 +33,3 @@ class ProductService {
         task.resume()
     }
 }
-

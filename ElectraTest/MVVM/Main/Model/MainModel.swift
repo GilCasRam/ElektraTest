@@ -37,6 +37,34 @@ struct Product: Identifiable, Codable {
         case regularPrice = "precioRegular"
         case finalPrice = "precioFinal"
     }
+    // Inicializador personalizado para pruebas
+        init(id: String,
+             lineId: Int = 0,
+             categoryCode: String = "",
+             modalityId: Int = 0,
+             relevance: Int = 0,
+             mainWeeklyPayment: Int = 0,
+             mainTerm: Int = 0,
+             creditAvailable: Bool = false,
+             weeklyPayments: [WeeklyPayment] = [],
+             name: String,
+             images: [String] = [],
+             regularPrice: Double = 0.0,
+             finalPrice: Double) {
+            self.id = id
+            self.lineId = lineId
+            self.categoryCode = categoryCode
+            self.modalityId = modalityId
+            self.relevance = relevance
+            self.mainWeeklyPayment = mainWeeklyPayment
+            self.mainTerm = mainTerm
+            self.creditAvailable = creditAvailable
+            self.weeklyPayments = weeklyPayments
+            self.name = name
+            self.images = images
+            self.regularPrice = regularPrice
+            self.finalPrice = finalPrice
+        }
 }
 
 struct WeeklyPayment: Codable {
@@ -70,7 +98,6 @@ struct ResultData: Codable {
         case products = "productos"
     }
 }
-
 
 struct ErrorWrapper: Identifiable {
     let id = UUID()

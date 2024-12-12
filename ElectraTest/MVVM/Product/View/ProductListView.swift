@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//import ViewInspector
 
 struct ProductListView: View {
     @Environment(\.dismiss) private var dismiss
@@ -13,7 +14,7 @@ struct ProductListView: View {
     @Binding var selectedProduct: Product?
     
     var body: some View {
-        List(viewModel.products) { product in
+        List(viewModel.filteredProducts) { product in
             Button(action: {
                 selectedProduct = product
                 if selectedProduct?.id != ""  {
@@ -23,7 +24,10 @@ struct ProductListView: View {
                 ProductCard(product: product)
             }
         }
+        .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Buscar producto")
         .navigationBarTitleDisplayMode(.large)
+        .toolbarBackground(Color.blue, for: .navigationBar)
+        .toolbarColorScheme(.light, for: .navigationBar)
         .navigationTitle("Lista de Productos")
         .onAppear {
             viewModel.fetchProducts()

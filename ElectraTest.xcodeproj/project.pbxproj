@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4649F9742D0B7C4C001A35B7 /* SelectedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649F9732D0B7C4C001A35B7 /* SelectedProductCell.swift */; };
 		466C37F62D0A4219008BF39C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466C37F52D0A4219008BF39C /* LaunchScreen.storyboard */; };
 		466C37F92D0AB268008BF39C /* ProductModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 466C37F72D0AB267008BF39C /* ProductModel.xcdatamodeld */; };
 		466C37FC2D0AB2D4008BF39C /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C37FB2D0AB2D4008BF39C /* PersistenceController.swift */; };
+		466C37FE2D0AC2E9008BF39C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C37FD2D0AC2E9008BF39C /* ProductViewModel.swift */; };
+		466C38052D0ACF38008BF39C /* MockProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C38042D0ACF38008BF39C /* MockProductService.swift */; };
+		466C38072D0ACF86008BF39C /* ProductViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C38062D0ACF86008BF39C /* ProductViewModelTests.swift */; };
+		466C380F2D0AD238008BF39C /* ProductListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C380E2D0AD238008BF39C /* ProductListViewTests.swift */; };
+		466C38112D0B7871008BF39C /* SavedProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C38102D0B7871008BF39C /* SavedProductListCell.swift */; };
 		46A1C84A2D0A1B9A00556606 /* ElectraTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C8492D0A1B9A00556606 /* ElectraTestApp.swift */; };
 		46A1C84E2D0A1B9B00556606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A1C84D2D0A1B9B00556606 /* Assets.xcassets */; };
 		46A1C8522D0A1B9B00556606 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A1C8512D0A1B9B00556606 /* Preview Assets.xcassets */; };
-		46A1C85C2D0A1B9B00556606 /* ElectraTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C85B2D0A1B9B00556606 /* ElectraTestTests.swift */; };
-		46A1C8662D0A1B9B00556606 /* ElectraTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C8652D0A1B9B00556606 /* ElectraTestUITests.swift */; };
-		46A1C8682D0A1B9B00556606 /* ElectraTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C8672D0A1B9B00556606 /* ElectraTestUITestsLaunchTests.swift */; };
 		46A1C8782D0A1D4100556606 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C8772D0A1D4100556606 /* MainModel.swift */; };
 		46A1C87B2D0A1D6A00556606 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C87A2D0A1D6A00556606 /* MainView.swift */; };
 		46A1C87E2D0A1F5400556606 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1C87D2D0A1F5400556606 /* ProductService.swift */; };
@@ -42,20 +45,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4649F9732D0B7C4C001A35B7 /* SelectedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProductCell.swift; sourceTree = "<group>"; };
 		466C37F42D0A34E6008BF39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		466C37F52D0A4219008BF39C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		466C37F82D0AB268008BF39C /* ProductModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductModel.xcdatamodel; sourceTree = "<group>"; };
 		466C37FB2D0AB2D4008BF39C /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		466C37FD2D0AC2E9008BF39C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		466C38042D0ACF38008BF39C /* MockProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductService.swift; sourceTree = "<group>"; };
+		466C38062D0ACF86008BF39C /* ProductViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelTests.swift; sourceTree = "<group>"; };
+		466C380E2D0AD238008BF39C /* ProductListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewTests.swift; sourceTree = "<group>"; };
+		466C38102D0B7871008BF39C /* SavedProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedProductListCell.swift; sourceTree = "<group>"; };
 		46A1C8462D0A1B9A00556606 /* ElectraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A1C8492D0A1B9A00556606 /* ElectraTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectraTestApp.swift; sourceTree = "<group>"; };
 		46A1C84D2D0A1B9B00556606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46A1C84F2D0A1B9B00556606 /* ElectraTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElectraTest.entitlements; sourceTree = "<group>"; };
 		46A1C8512D0A1B9B00556606 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46A1C8572D0A1B9B00556606 /* ElectraTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectraTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46A1C85B2D0A1B9B00556606 /* ElectraTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectraTestTests.swift; sourceTree = "<group>"; };
 		46A1C8612D0A1B9B00556606 /* ElectraTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectraTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46A1C8652D0A1B9B00556606 /* ElectraTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectraTestUITests.swift; sourceTree = "<group>"; };
-		46A1C8672D0A1B9B00556606 /* ElectraTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectraTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		46A1C8772D0A1D4100556606 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		46A1C87A2D0A1D6A00556606 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		46A1C87D2D0A1F5400556606 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
@@ -93,16 +99,51 @@
 			isa = PBXGroup;
 			children = (
 				466C37FB2D0AB2D4008BF39C /* PersistenceController.swift */,
+				466C37F72D0AB267008BF39C /* ProductModel.xcdatamodeld */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		466C37FF2D0AC986008BF39C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				466C37FD2D0AC2E9008BF39C /* ProductViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		466C38002D0AC9DA008BF39C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				466C37FA2D0AB2BB008BF39C /* Persistence */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		466C38012D0ACA0E008BF39C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46A1C84D2D0A1B9B00556606 /* Assets.xcassets */,
+				466C37F52D0A4219008BF39C /* LaunchScreen.storyboard */,
+				46A1C8502D0A1B9B00556606 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		466C38032D0ACE27008BF39C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				46A1C8642D0A1B9B00556606 /* ElectraTestUITests */,
+				46A1C85A2D0A1B9B00556606 /* ElectraTestTests */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		46A1C83D2D0A1B9A00556606 = {
 			isa = PBXGroup;
 			children = (
 				46A1C8482D0A1B9A00556606 /* ElectraTest */,
-				46A1C85A2D0A1B9B00556606 /* ElectraTestTests */,
-				46A1C8642D0A1B9B00556606 /* ElectraTestUITests */,
+				466C38032D0ACE27008BF39C /* Test */,
 				46A1C8472D0A1B9A00556606 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,14 +161,12 @@
 		46A1C8482D0A1B9A00556606 /* ElectraTest */ = {
 			isa = PBXGroup;
 			children = (
-				466C37F42D0A34E6008BF39C /* Info.plist */,
-				46A1C8742D0A1CC200556606 /* MVVM */,
-				46A1C8492D0A1B9A00556606 /* ElectraTestApp.swift */,
-				46A1C84D2D0A1B9B00556606 /* Assets.xcassets */,
 				46A1C84F2D0A1B9B00556606 /* ElectraTest.entitlements */,
-				46A1C8502D0A1B9B00556606 /* Preview Content */,
-				466C37F52D0A4219008BF39C /* LaunchScreen.storyboard */,
-				466C37F72D0AB267008BF39C /* ProductModel.xcdatamodeld */,
+				466C37F42D0A34E6008BF39C /* Info.plist */,
+				46A1C8492D0A1B9A00556606 /* ElectraTestApp.swift */,
+				466C38002D0AC9DA008BF39C /* Core */,
+				46A1C8742D0A1CC200556606 /* MVVM */,
+				466C38012D0ACA0E008BF39C /* Resources */,
 			);
 			path = ElectraTest;
 			sourceTree = "<group>";
@@ -143,7 +182,8 @@
 		46A1C85A2D0A1B9B00556606 /* ElectraTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				46A1C85B2D0A1B9B00556606 /* ElectraTestTests.swift */,
+				466C38042D0ACF38008BF39C /* MockProductService.swift */,
+				466C38062D0ACF86008BF39C /* ProductViewModelTests.swift */,
 			);
 			path = ElectraTestTests;
 			sourceTree = "<group>";
@@ -151,8 +191,7 @@
 		46A1C8642D0A1B9B00556606 /* ElectraTestUITests */ = {
 			isa = PBXGroup;
 			children = (
-				46A1C8652D0A1B9B00556606 /* ElectraTestUITests.swift */,
-				46A1C8672D0A1B9B00556606 /* ElectraTestUITestsLaunchTests.swift */,
+				466C380E2D0AD238008BF39C /* ProductListViewTests.swift */,
 			);
 			path = ElectraTestUITests;
 			sourceTree = "<group>";
@@ -160,7 +199,6 @@
 		46A1C8742D0A1CC200556606 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				466C37FA2D0AB2BB008BF39C /* Persistence */,
 				46A1C8832D0A1FCC00556606 /* Main */,
 				46A1C8822D0A1FBC00556606 /* Product */,
 			);
@@ -170,7 +208,9 @@
 		46A1C8752D0A1CCB00556606 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				46A1C8792D0A1D4E00556606 /* View */,
+				46A1C87A2D0A1D6A00556606 /* MainView.swift */,
+				466C38102D0B7871008BF39C /* SavedProductListCell.swift */,
+				4649F9732D0B7C4C001A35B7 /* SelectedProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,14 +221,6 @@
 				46A1C8772D0A1D4100556606 /* MainModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		46A1C8792D0A1D4E00556606 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				46A1C87A2D0A1D6A00556606 /* MainView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		46A1C87C2D0A1F1F00556606 /* Networking */ = {
@@ -210,6 +242,8 @@
 		46A1C8822D0A1FBC00556606 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				46A1C87C2D0A1F1F00556606 /* Networking */,
+				466C37FF2D0AC986008BF39C /* ViewModel */,
 				46A1C8842D0A201800556606 /* View */,
 			);
 			path = Product;
@@ -218,7 +252,6 @@
 		46A1C8832D0A1FCC00556606 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				46A1C87C2D0A1F1F00556606 /* Networking */,
 				46A1C87F2D0A1F5E00556606 /* ViewModel */,
 				46A1C8752D0A1CCB00556606 /* View */,
 				46A1C8762D0A1D2500556606 /* Model */,
@@ -251,6 +284,8 @@
 			dependencies = (
 			);
 			name = ElectraTest;
+			packageProductDependencies = (
+			);
 			productName = ElectraTest;
 			productReference = 46A1C8462D0A1B9A00556606 /* ElectraTest.app */;
 			productType = "com.apple.product-type.application";
@@ -323,6 +358,8 @@
 				Base,
 			);
 			mainGroup = 46A1C83D2D0A1B9A00556606;
+			packageReferences = (
+			);
 			productRefGroup = 46A1C8472D0A1B9A00556606 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,10 +403,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4649F9742D0B7C4C001A35B7 /* SelectedProductCell.swift in Sources */,
 				466C37FC2D0AB2D4008BF39C /* PersistenceController.swift in Sources */,
+				466C38112D0B7871008BF39C /* SavedProductListCell.swift in Sources */,
 				46A1C87B2D0A1D6A00556606 /* MainView.swift in Sources */,
 				46A1C8862D0A203500556606 /* ProductListView.swift in Sources */,
 				46A1C84A2D0A1B9A00556606 /* ElectraTestApp.swift in Sources */,
+				466C38052D0ACF38008BF39C /* MockProductService.swift in Sources */,
+				466C37FE2D0AC2E9008BF39C /* ProductViewModel.swift in Sources */,
 				466C37F92D0AB268008BF39C /* ProductModel.xcdatamodeld in Sources */,
 				46A1C8782D0A1D4100556606 /* MainModel.swift in Sources */,
 				46A1C87E2D0A1F5400556606 /* ProductService.swift in Sources */,
@@ -382,7 +423,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A1C85C2D0A1B9B00556606 /* ElectraTestTests.swift in Sources */,
+				466C380F2D0AD238008BF39C /* ProductListViewTests.swift in Sources */,
+				466C38072D0ACF86008BF39C /* ProductViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,8 +432,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A1C8662D0A1B9B00556606 /* ElectraTestUITests.swift in Sources */,
-				46A1C8682D0A1B9B00556606 /* ElectraTestUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +573,6 @@
 				CODE_SIGN_ENTITLEMENTS = ElectraTest/ElectraTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"ElectraTest/Preview Content\"";
 				DEVELOPMENT_TEAM = A5449499J2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -573,7 +612,6 @@
 				CODE_SIGN_ENTITLEMENTS = ElectraTest/ElectraTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"ElectraTest/Preview Content\"";
 				DEVELOPMENT_TEAM = A5449499J2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -743,8 +781,7 @@
 				466C37F82D0AB268008BF39C /* ProductModel.xcdatamodel */,
 			);
 			currentVersion = 466C37F82D0AB268008BF39C /* ProductModel.xcdatamodel */;
-			name = ProductModel.xcdatamodeld;
-			path = /Users/gilcasram/Documents/Proyectos/ElectraTest/ElectraTest/ProductModel.xcdatamodeld;
+			path = ProductModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
