@@ -1,0 +1,9 @@
+# Archivos y carpetas de Xcode a ignorar
+DerivedData/
+*.xcworkspace
+xcuserdata/
+*.xcodeproj/project.xcworkspace
+*.xcodeproj/xcuserdata/
+*.xcuserdatad
+*.DS_Store
+*.swiftpm/
