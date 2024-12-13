@@ -7,11 +7,11 @@
 
 import Foundation
 
-class MockProductService: ProductService {
+class MockProductService: ProductFetchingProtocol {
     var shouldReturnError = false
     var mockProducts: [Product] = []
     
-    override func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
+    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
         if shouldReturnError {
             completion(.failure(NSError(domain: "TestError", code: -1, userInfo: nil)))
         } else {

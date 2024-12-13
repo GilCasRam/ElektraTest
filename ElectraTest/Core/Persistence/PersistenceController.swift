@@ -8,6 +8,14 @@
 import Foundation
 import CoreData
 
+protocol ProductRepositoryProtocol {
+    func saveProduct(product: Product)
+    func isProductAlreadySaved(productId: String) -> Bool
+    func fetchSavedProducts() -> [ProductEntity]
+    func deleteProduct(_ product: ProductEntity)
+}
+
+
 class PersistenceController {
     static let shared = PersistenceController()
     
@@ -27,13 +35,12 @@ class PersistenceController {
     }
 }
 
-class ProductCoreDataManager {
+class ProductCoreDataManager: ProductRepositoryProtocol {
     static let shared = ProductCoreDataManager()
     private let context = PersistenceController.shared.context
     
     // Guardar un producto
     func saveProduct(product: Product) {
-        // Verificar si el producto ya está guardado
         if isProductAlreadySaved(productId: product.id) {
             print("El producto ya está guardado.")
             return
@@ -67,7 +74,7 @@ class ProductCoreDataManager {
         }
     }
     
-    // Obtener todos los productos
+    // Obtener todos los productos guardados
     func fetchSavedProducts() -> [ProductEntity] {
         let request: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
         

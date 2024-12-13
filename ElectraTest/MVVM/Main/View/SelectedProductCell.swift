@@ -10,13 +10,13 @@ import SwiftUI
 struct SelectedProductCell: View {
     let product: Product
     let onSave: () -> Void
+    let clean: () -> Void
     @Binding var showDuplicateAlert: Bool
     
     var body: some View {
         VStack(spacing: 16) {
-            Text("Producto Seleccionado:")
+            Text("Producto seleccionado:")
                 .font(.headline)
-            
             if product.images.count > 1 {
                 ScrollView(.horizontal) {
                     HStack {
@@ -41,22 +41,19 @@ struct SelectedProductCell: View {
                 .frame(width: 80, height: 80)
                 .cornerRadius(8)
             }
-            
             Text(product.name)
                 .font(.subheadline)
-            
-            Text("Precio Final: $\(product.finalPrice, specifier: "%.2f")")
+            Text("Precio final: $\(product.finalPrice, specifier: "%.2f")")
                 .font(.subheadline)
-            
-            Button("Guardar Producto") {
+            Button("Guardar producto") {
                 onSave()
             }
             .alert("Producto ya guardado", isPresented: $showDuplicateAlert) {
-                Button("OK", role: .cancel) {}
+                Button("OK", role: .cancel) {clean()}
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.blue)
+            .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(10)
         }

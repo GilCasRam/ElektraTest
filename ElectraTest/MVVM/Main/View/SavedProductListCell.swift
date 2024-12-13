@@ -24,9 +24,9 @@ struct SavedProductListCell: View {
                     .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        Text(savedProduct.name ?? "Sin Nombre")
+                        Text(savedProduct.name ?? "Sin nombre")
                             .font(.subheadline)
-                        Text("Precio Final: $\(savedProduct.finalPrice, specifier: "%.2f")")
+                        Text("Precio final: $\(savedProduct.finalPrice, specifier: "%.2f")")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }

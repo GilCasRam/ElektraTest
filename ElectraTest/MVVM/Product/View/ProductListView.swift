@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-//import ViewInspector
 
 struct ProductListView: View {
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var viewModel = ProductViewModel()
+    @StateObject private var viewModel = ProductViewModel()
     @Binding var selectedProduct: Product?
     
     var body: some View {
@@ -26,12 +25,22 @@ struct ProductListView: View {
         }
         .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Buscar producto")
         .navigationBarTitleDisplayMode(.large)
-        .toolbarBackground(Color.blue, for: .navigationBar)
+        .toolbarBackground(Color.init(hex: "DFF4F3")!, for: .navigationBar)
         .toolbarColorScheme(.light, for: .navigationBar)
-        .navigationTitle("Lista de Productos")
+        .navigationTitle("Lista de productos")
         .onAppear {
             viewModel.fetchProducts()
         }
+        .overlay(content: {
+            if viewModel.isLoanding {
+                ProgressView{
+                    Text("Loading")
+                        .foregroundColor(.blue)
+                        .bold()
+                }.padding()
+                .background(Color.gray.opacity(0.2))
+            }
+        })
         .alert(item: $viewModel.errorMessage) { errorWrapper in
             Alert(
                 title: Text("Error"),

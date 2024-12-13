@@ -13,6 +13,10 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Text("Productos")
+                    .padding()
+                    .font(.largeTitle)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 // Producto seleccionado
                 if let product = vm.selectedProduct {
                     SelectedProductCell(
@@ -21,11 +25,11 @@ struct MainView: View {
                             if ProductCoreDataManager.shared.isProductAlreadySaved(productId: product.id) {
                                 vm.showDuplicateAlert = true
                             } else {
-                                ProductCoreDataManager.shared.saveProduct(product: product)
+                                vm.saveProduct(product)
                                 vm.fetchSavedProducts() // Actualizar la lista de productos guardados
-                                vm.selectedProduct = nil // Limpiar el producto seleccionado
+                                // Limpiar el producto seleccionado
                             }
-                        },
+                        }, clean: {vm.selectedProduct = nil},
                         showDuplicateAlert: $vm.showDuplicateAlert
                     )
                 } else {
@@ -35,7 +39,7 @@ struct MainView: View {
                 Spacer()
                 if !vm.savedProducts.isEmpty {
                     // Ver productos guardados
-                    Text("Productos Guardados:")
+                    Text("Productos guardados:")
                         .font(.headline)
                         .padding(.top)
                     SavedProductListCell(savedProducts: vm.savedProducts, onDelete: vm.deleteProducts)
@@ -43,15 +47,15 @@ struct MainView: View {
                 Spacer()
                 // Navegar a lista de productos
                 NavigationLink(value: "productsList") {
-                    Text("Ver Productos")
+                    Text("Ver productos")
+                        .frame(maxWidth: .infinity)
                         .padding()
-                        .foregroundColor(.white)
                         .background(Color.blue)
-                        .cornerRadius(8)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
-                .padding(.vertical, 5)
+                .padding(10)
             }
-            .navigationTitle("Productos")
             .navigationDestination(for: String.self) { destination in
                 if destination == "productsList" {
                     ProductListView(selectedProduct: $vm.selectedProduct)

@@ -12,7 +12,8 @@ class ProductViewModel: ObservableObject {
     @Published var products: [Product] = []
     @Published var errorMessage: ErrorWrapper? = nil
     @Published var searchText: String = ""
-    private let productService: ProductService
+    @Published var isLoanding: Bool = false
+    private let productService: ProductFetchingProtocol
     
     // Productos filtrados según la barra de búsqueda
     var filteredProducts: [Product] {
@@ -25,18 +26,21 @@ class ProductViewModel: ObservableObject {
         }
     }
     
-    init(productService: ProductService = ProductService()) {
+    init(productService: ProductFetchingProtocol = ProductService()) {
         self.productService = productService
     }
     
     func fetchProducts() {
+        self.isLoanding = true
         productService.fetchProducts { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let products):
                     self?.products = products
+                    self?.isLoanding = false
                 case .failure(let error):
                     self?.errorMessage = ErrorWrapper(message: error.localizedDescription)
+                    self?.isLoanding = false
                 }
             }
         }

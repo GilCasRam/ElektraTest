@@ -7,13 +7,29 @@
 
 import Foundation
 
-class ProductService {
+protocol ProductFetchingProtocol {
+    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+}
+
+class ProductService: ProductFetchingProtocol {
+    private let urlSession: URLSession
+    private let jsonDecoder: JSONDecoder
+    private let urlString: String
+    
+    init(urlSession: URLSession = .shared,
+         jsonDecoder: JSONDecoder = JSONDecoder(),
+         urlString: String = "http://alb-dev-ekt-875108740.us-east-1.elb.amazonaws.com/apps/moviles/caso-practico/plp") {
+        self.urlSession = urlSession
+        self.jsonDecoder = jsonDecoder
+        self.urlString = urlString
+    }
+    
     func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
-        guard let url = URL(string: "http://alb-dev-ekt-875108740.us-east-1.elb.amazonaws.com/apps/moviles/caso-practico/plp") else {
+        guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = urlSession.dataTask(with: url) { [weak self] data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -23,10 +39,10 @@ class ProductService {
                 return
             }
             do {
-                let apiResponse = try JSONDecoder().decode(APIResponse.self, from: data)
+                guard let self = self else { return }
+                let apiResponse = try self.jsonDecoder.decode(APIResponse.self, from: data)
                 completion(.success(apiResponse.result.products))
             } catch {
-                print("Decoding error: \(error)")
                 completion(.failure(error))
             }
         }

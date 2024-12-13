@@ -31,11 +31,11 @@ final class ProductViewModelTests: XCTestCase {
         ]
         
         // When
-        let expectation = XCTestExpectation(description: "Fetch products")
+        let expectation = XCTestExpectation(description: "Fetch products successfully")
         viewModel.fetchProducts()
         
-        DispatchQueue.main.async {
-            // Then
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             XCTAssertEqual(self.viewModel.products.count, 1)
             XCTAssertEqual(self.viewModel.products.first?.name, "Test Product")
             expectation.fulfill()
@@ -49,12 +49,13 @@ final class ProductViewModelTests: XCTestCase {
         mockService.shouldReturnError = true
         
         // When
-        let expectation = XCTestExpectation(description: "Handle error")
+        let expectation = XCTestExpectation(description: "Handle error gracefully")
         viewModel.fetchProducts()
         
-        DispatchQueue.main.async {
-            // Then
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             XCTAssertNotNil(self.viewModel.errorMessage)
+            XCTAssertEqual(self.viewModel.errorMessage?.message, "The operation couldn’t be completed. (TestError error -1.)")
             expectation.fulfill()
         }
         

@@ -24,10 +24,10 @@ struct ProductCard: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(product.name)
                     .font(.headline)
-                Text("Precio Regular: $\(product.regularPrice, specifier: "%.2f")")
+                Text("Precio regular: $\(product.regularPrice, specifier: "%.2f")")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Text("Precio Final: $\(product.finalPrice, specifier: "%.2f")")
+                Text("Precio final: $\(product.finalPrice, specifier: "%.2f")")
                     .font(.caption)
                     .foregroundColor(.green)
                 Text("Categoria: \(product.categoryCode)")
@@ -36,13 +36,5 @@ struct ProductCard: View {
             }
         }
         .padding()
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.white]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
-        )
     }
 }
